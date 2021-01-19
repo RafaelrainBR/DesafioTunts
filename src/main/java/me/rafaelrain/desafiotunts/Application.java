@@ -2,6 +2,7 @@ package me.rafaelrain.desafiotunts;
 
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.jackson2.JacksonFactory;
+import lombok.Getter;
 import me.rafaelrain.desafiotunts.controller.StudentController;
 import me.rafaelrain.desafiotunts.model.Student;
 import me.rafaelrain.desafiotunts.service.SheetsService;
@@ -11,6 +12,7 @@ import java.security.GeneralSecurityException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+@Getter
 public class Application {
     public static final JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
 
@@ -72,6 +74,10 @@ public class Application {
                         ? time + "ms"
                         : TimeUnit.MILLISECONDS.toSeconds(time) + "s"
         ).println();
+    }
+
+    public void cleanSheet() throws IOException {
+        sheetsService.cleanChanges();
     }
 
 }
