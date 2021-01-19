@@ -88,5 +88,4 @@ public class SheetsService {
     private String buildRange(String range) {
         return SHEET_NAME + "!" + range;
     }
-
 }
