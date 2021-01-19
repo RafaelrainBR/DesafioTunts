@@ -6,7 +6,7 @@ plugins {
 group 'me.rafaelrain'
 version '1.0-SNAPSHOT'
 
-mainClassName = 'me.rafaelrain.desafiotunts.DesafioTunts'
+mainClassName = 'me.rafaelrain.desafiotunts.Application'
 
 repositories {
     mavenCentral()

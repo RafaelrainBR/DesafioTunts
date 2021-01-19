@@ -12,9 +12,12 @@ import com.google.api.services.sheets.v4.SheetsScopes;
 import java.io.*;
 import java.util.Collections;
 
-import static me.rafaelrain.desafiotunts.info.Info.*;
+import static me.rafaelrain.desafiotunts.Application.JSON_FACTORY;
 
 public class CredentialHelper {
+
+    private static final String CREDENTIALS_PATH = "credentials.json";
+    private static final String TOKENS_DIR_PATH = "tokens";
 
     public static Credential getCredential(NetHttpTransport transport) throws IOException {
         final InputStream in = CredentialHelper.class.getClassLoader().getResourceAsStream(CREDENTIALS_PATH);
