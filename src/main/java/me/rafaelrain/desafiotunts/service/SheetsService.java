@@ -57,6 +57,16 @@ public class SheetsService {
         );
     }
 
+    public void cleanAlterations() throws IOException {
+        String range = "G4:H27";
+
+        updateRange(range,
+                Collections.nCopies(24,
+                        Arrays.asList("", "")
+                )
+        );
+    }
+
     private List<List<Object>> getValues(String range) throws IOException {
         final ValueRange response = service.spreadsheets().values()
                 .get(SHEET_ID, buildRange(range))
@@ -78,4 +88,5 @@ public class SheetsService {
     private String buildRange(String range) {
         return SHEET_NAME + "!" + range;
     }
+
 }
